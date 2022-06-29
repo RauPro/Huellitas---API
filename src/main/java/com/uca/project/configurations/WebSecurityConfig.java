@@ -60,7 +60,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable()
 
 
-                .authorizeRequests().antMatchers("/auth/login", "/auth/registry", "/findAllPublications", "/filter/{species}","/publicacion/{id}", "/swagger-ui/**").permitAll().
+                .authorizeRequests().antMatchers("/auth/login", "/auth/registry", "/findAllPublications", "/filter/{species}","/publicacion/{id}", "/swagger-ui", "/swagger-ui/**", "/v3/**").permitAll().
                 // all other requests need to be authenticated
                         anyRequest().authenticated().and().
                         exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint).and().sessionManagement()
