@@ -15,8 +15,25 @@
 	<name>huellitas-uca</name>
 	<description>HuellitasUCA project for Spring Boot</description>
 	<properties>
-		<java.version>13</java.version>
+		<java.version>11</java.version>
 	</properties>
+	<repositories>
+		<repository>
+			<id>spring-snapshots</id>
+			<url>http://repo.spring.io/snapshot</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>spring-milestones</id>
+			<url>http://repo.spring.io/milestone</url>
+		</repository>
+		<repository>
+			<id>spring-repo</id>
+			<url>https://repo.spring.io/release</url>
+		</repository>
+	</repositories>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -40,12 +57,6 @@
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
 			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-parent</artifactId>
-			<version>2.4.0</version>
-			
 		</dependency>
 		<dependency>
 			<groupId>org.postgresql</groupId>
@@ -86,7 +97,11 @@
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>2.9.2</version>
 		</dependency>
-		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-parent</artifactId>
+			<version>2.4.0</version>
+		</dependency>
 
 	</dependencies>
 
@@ -104,7 +119,6 @@
 					</excludes>
 				</configuration>
 			</plugin>
-			
 		</plugins>
 	</build>
 
